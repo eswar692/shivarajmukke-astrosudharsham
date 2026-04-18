@@ -42,7 +42,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="relative bg-slate-950 min-h-screen py-24 px-6 overflow-hidden">
+    <div className="relative bg-[#1b2a3b] min-h-screen py-24 px-6 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none" />

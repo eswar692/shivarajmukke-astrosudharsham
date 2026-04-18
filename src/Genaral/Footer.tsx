@@ -20,7 +20,7 @@ export default function Footer() {
   const [ref, inView] = useInViewOnce(0.2);
 
   return (
-    <motion.footer className="relative mt-2 w-full overflow-hidden text-white z-[999] bg-gradient-to-br from-slate-950 via-zinc-900 to-slate-950">
+    <motion.footer className="bg-[#1b2a3b] relative mt-2 w-full overflow-hidden text-white z-[999] ">
       {/* Top shimmer line */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-yellow-500 to-transparent opacity-60" />
 

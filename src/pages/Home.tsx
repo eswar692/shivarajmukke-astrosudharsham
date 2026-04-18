@@ -19,7 +19,7 @@ import ImageView from "../Genaral/VideoView";
 
 const Home = () => {
   return (
-    <div className="flex flex-col w-full h-full bg-slate-950">
+    <div className="flex flex-col w-full h-full bg-[#0d1b2a]">
       <ImageView />
       <Problems />
       <AboutAstrologer />
@@ -90,18 +90,24 @@ const Problems = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-slate-950 to-zinc-900">
+    <section className="py-20 px-4 bg-gradient-to-b from-[#0d1b2a] to-[#1b2a3b]">
       {/* Section header */}
       <div className="max-w-6xl mx-auto text-center mb-14">
-        <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-yellow-500">
+        <span
+          className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#c9956c]"
+          style={{ fontFamily: "'Raleway', sans-serif" }}
+        >
           How We Help
         </span>
         <div className="flex items-center justify-center gap-3 mt-2">
-          <div className="w-12 h-px bg-gradient-to-r from-transparent to-yellow-500" />
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white tracking-wide">
+          <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#c9956c]" />
+          <h2
+            className="text-3xl md:text-4xl font-bold text-white tracking-wide"
+            style={{ fontFamily: "'Cinzel', serif" }}
+          >
             Areas of Consultation
           </h2>
-          <div className="w-12 h-px bg-gradient-to-l from-transparent to-yellow-500" />
+          <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#c9956c]" />
         </div>
       </div>
 
@@ -113,9 +119,9 @@ const Problems = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
             viewport={{ once: true }}
-            className="group bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden
+            className="group bg-[#1b2a3b] border border-white/5 rounded-2xl overflow-hidden
             shadow-lg shadow-black/40
-            hover:border-yellow-500/20 hover:shadow-yellow-500/5
+            hover:border-[#c9956c]/20 hover:shadow-[#c9956c]/5
             transition-all duration-300"
           >
             <div className="overflow-hidden relative">
@@ -124,13 +130,19 @@ const Problems = () => {
                 alt={item.title}
                 className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1b2a3b]/80 to-transparent" />
             </div>
             <div className="p-6 text-center">
-              <h3 className="font-serif text-lg font-semibold text-yellow-400 tracking-wide">
+              <h3
+                className="text-lg font-semibold text-[#c9956c] tracking-wide"
+                style={{ fontFamily: "'Cinzel', serif" }}
+              >
                 {item.title}
               </h3>
-              <p className="text-sm text-zinc-400 mt-3 leading-relaxed font-light">
+              <p
+                className="text-sm text-[#94a3b8] mt-3 leading-relaxed font-light"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
                 {item.desc}
               </p>
               <a
@@ -139,11 +151,12 @@ const Problems = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-6
                 px-6 py-2.5 rounded-md text-sm font-semibold
-                bg-gradient-to-r from-yellow-500 to-yellow-400
-                text-black shadow-md shadow-yellow-500/20
-                hover:shadow-yellow-500/40 hover:-translate-y-0.5
+                bg-gradient-to-r from-[#c9956c] to-[#e8b89a]
+                text-white shadow-md shadow-[#c9956c]/20
+                hover:shadow-[#c9956c]/40 hover:-translate-y-0.5
                 transition-all duration-200"
                 aria-label={`WhatsApp us about ${item.title}`}
+                style={{ fontFamily: "'Raleway', sans-serif" }}
               >
                 <MessageCircle size={14} /> Message Us
               </a>
@@ -158,40 +171,50 @@ const Problems = () => {
 /* ── About Astrologer ── */
 const AboutAstrologer = () => {
   return (
-    <section className="relative py-24 px-6 bg-zinc-900 overflow-hidden">
+    <section className="relative py-24 px-6 bg-[#1b2a3b] overflow-hidden">
       {/* Dot grid */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-yellow-600/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-600/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#c9956c_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#c9956c]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#1b3a5c]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
         {/* Text */}
         <div className="space-y-6 text-center md:text-left">
           <span
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full
-            bg-yellow-500/10 border border-yellow-500/20
-            text-yellow-400 text-xs font-semibold tracking-widest uppercase"
+            bg-[#c9956c]/10 border border-[#c9956c]/20
+            text-[#c9956c] text-xs font-semibold tracking-widest uppercase"
+            style={{ fontFamily: "'Raleway', sans-serif" }}
           >
             ✨ About {company_name}
           </span>
 
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white tracking-wide leading-tight">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white tracking-wide leading-tight"
+            style={{ fontFamily: "'Cinzel', serif" }}
+          >
             {company_name}
           </h2>
-          <div className="w-14 h-px bg-gradient-to-r from-yellow-500 to-transparent mx-auto md:mx-0" />
+          <div className="w-14 h-px bg-gradient-to-r from-[#c9956c] to-transparent mx-auto md:mx-0" />
 
-          <p className="text-zinc-400 leading-relaxed text-base font-light">
+          <p
+            className="text-[#94a3b8] leading-relaxed text-base font-light"
+            style={{ fontFamily: "'Lato', sans-serif" }}
+          >
             Meet{" "}
             <span className="font-semibold text-white">{company_name}</span>, a
             trusted practitioner whose knowledge is rooted in traditional Kerala
             wisdom. His guidance has helped many individuals discover{" "}
-            <span className="font-medium text-yellow-400">
+            <span className="font-medium text-[#c9956c]">
               clarity, balance, and confidence
             </span>
             .
           </p>
 
-          <p className="text-zinc-400 leading-relaxed text-base font-light">
+          <p
+            className="text-[#94a3b8] leading-relaxed text-base font-light"
+            style={{ fontFamily: "'Lato', sans-serif" }}
+          >
             Through personalized consultations and thoughtful insights,{" "}
             {company_name} supports people in navigating life decisions with
             calmness, awareness, and grounded understanding.
@@ -201,9 +224,10 @@ const AboutAstrologer = () => {
             <a
               href={`tel:${phone_number}`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-sm
-              bg-gradient-to-r from-yellow-500 to-yellow-400 text-black
-              shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/40 hover:-translate-y-0.5
+              bg-gradient-to-r from-[#c9956c] to-[#e8b89a] text-white
+              shadow-lg shadow-[#c9956c]/20 hover:shadow-[#c9956c]/40 hover:-translate-y-0.5
               transition-all duration-200"
+              style={{ fontFamily: "'Raleway', sans-serif" }}
             >
               <Phone size={16} /> Call Now
             </a>
@@ -213,8 +237,9 @@ const AboutAstrologer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-sm
               bg-white/5 border border-white/10 text-white
-              hover:bg-white/10 hover:border-yellow-500/30 hover:-translate-y-0.5
+              hover:bg-white/10 hover:border-[#c9956c]/30 hover:-translate-y-0.5
               transition-all duration-200"
+              style={{ fontFamily: "'Raleway', sans-serif" }}
             >
               <MessageCircle size={16} /> Chat Now
             </a>
@@ -224,7 +249,7 @@ const AboutAstrologer = () => {
         {/* Image */}
         <div className="flex justify-center">
           <div className="relative w-full max-w-md">
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-yellow-500/30 to-transparent blur-xl opacity-60" />
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-[#c9956c]/30 to-transparent blur-xl opacity-60" />
             <img
               src="https://i.pinimg.com/1200x/a2/2e/34/a22e34ab3f1765939a7825677df5861f.jpg"
               alt={`${company_name} practitioner`}
@@ -265,15 +290,21 @@ const AstrologyServices = () => {
   ];
 
   return (
-    <section className="relative py-24 bg-slate-950 overflow-hidden">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-indigo-600/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative py-24 bg-[#0d1b2a] overflow-hidden">
+      <div className="absolute top-0 left-0 w-64 h-64 bg-[#c9956c]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#1b3a5c]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-        <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-yellow-500">
+        <span
+          className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#c9956c]"
+          style={{ fontFamily: "'Raleway', sans-serif" }}
+        >
           Our Specialties
         </span>
-        <h2 className="font-serif text-3xl md:text-5xl font-bold text-white tracking-wide mt-2 mb-14">
+        <h2
+          className="text-3xl md:text-5xl font-bold text-white tracking-wide mt-2 mb-14"
+          style={{ fontFamily: "'Cinzel', serif" }}
+        >
           Consultation Services
         </h2>
 
@@ -285,8 +316,8 @@ const AstrologyServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden
-              hover:border-yellow-500/20 shadow-lg shadow-black/40
+              className="group bg-[#1b2a3b] border border-white/5 rounded-2xl overflow-hidden
+              hover:border-[#c9956c]/20 shadow-lg shadow-black/40
               transition-all duration-300"
             >
               <div className="relative overflow-hidden">
@@ -295,24 +326,31 @@ const AstrologyServices = () => {
                   alt={service.title}
                   className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1b2a3b]/90 via-[#1b2a3b]/30 to-transparent" />
               </div>
               <div className="p-6 space-y-4 text-center">
-                <h3 className="font-serif text-lg font-semibold text-yellow-400 tracking-wide">
+                <h3
+                  className="text-lg font-semibold text-[#c9956c] tracking-wide"
+                  style={{ fontFamily: "'Cinzel', serif" }}
+                >
                   {service.title}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed font-light">
+                <p
+                  className="text-[#94a3b8] text-sm leading-relaxed font-light"
+                  style={{ fontFamily: "'Lato', sans-serif" }}
+                >
                   {service.desc}
                 </p>
                 <a href={`tel:${phone_number}`}>
                   <button
                     className="w-full flex items-center justify-center gap-2
                     py-2.5 px-6 rounded-md mt-2
-                    bg-gradient-to-r from-yellow-500 to-yellow-400
-                    text-black font-semibold text-sm
-                    shadow-md shadow-yellow-500/20
-                    hover:shadow-yellow-500/40 hover:-translate-y-0.5
+                    bg-gradient-to-r from-[#c9956c] to-[#e8b89a]
+                    text-white font-semibold text-sm
+                    shadow-md shadow-[#c9956c]/20
+                    hover:shadow-[#c9956c]/40 hover:-translate-y-0.5
                     transition-all duration-200"
+                    style={{ fontFamily: "'Raleway', sans-serif" }}
                   >
                     <Phone size={14} /> Call Now
                   </button>
@@ -348,7 +386,7 @@ const AstrologyServicesModern = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-zinc-900">
+    <section className="py-20 px-4 bg-[#1b2a3b]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -357,10 +395,16 @@ const AstrologyServicesModern = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-yellow-500">
+          <span
+            className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#c9956c]"
+            style={{ fontFamily: "'Raleway', sans-serif" }}
+          >
             Wellness
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white tracking-wide mt-2">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-white tracking-wide mt-2"
+            style={{ fontFamily: "'Cinzel', serif" }}
+          >
             Wellness Services
           </h2>
         </motion.div>
@@ -371,9 +415,9 @@ const AstrologyServicesModern = () => {
               key={idx}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 200, damping: 18 }}
-              className="group bg-slate-950 border border-white/5 rounded-2xl overflow-hidden
+              className="group bg-[#0d1b2a] border border-white/5 rounded-2xl overflow-hidden
               shadow-lg shadow-black/40
-              hover:border-yellow-500/20 transition-all duration-300"
+              hover:border-[#c9956c]/20 transition-all duration-300"
             >
               <div className="h-48 w-full overflow-hidden relative">
                 <img
@@ -381,10 +425,13 @@ const AstrologyServicesModern = () => {
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a]/80 to-transparent" />
               </div>
               <div className="p-5 text-center">
-                <h3 className="font-serif text-base font-semibold text-yellow-400 tracking-wide">
+                <h3
+                  className="text-base font-semibold text-[#c9956c] tracking-wide"
+                  style={{ fontFamily: "'Cinzel', serif" }}
+                >
                   {service.title}
                 </h3>
                 <a href={`tel:${phone_number}`}>
@@ -392,8 +439,9 @@ const AstrologyServicesModern = () => {
                     className="mt-4 w-full flex items-center justify-center gap-2
                     bg-white/5 border border-white/10 text-white text-sm font-medium
                     py-2.5 rounded-md
-                    hover:bg-yellow-500/10 hover:border-yellow-500/30 hover:text-yellow-400
+                    hover:bg-[#c9956c]/10 hover:border-[#c9956c]/30 hover:text-[#c9956c]
                     transition-all duration-200"
+                    style={{ fontFamily: "'Raleway', sans-serif" }}
                   >
                     <Phone size={13} /> Call Now
                   </button>
@@ -455,7 +503,7 @@ const AllServicesModern = () => {
   ];
 
   return (
-    <section className="py-24 px-4 bg-slate-950">
+    <section className="py-24 px-4 bg-[#0d1b2a]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -464,16 +512,22 @@ const AllServicesModern = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-yellow-500">
+          <span
+            className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#c9956c]"
+            style={{ fontFamily: "'Raleway', sans-serif" }}
+          >
             Full Spectrum
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white tracking-wide mt-2">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white tracking-wide mt-2"
+            style={{ fontFamily: "'Cinzel', serif" }}
+          >
             Our Services
           </h2>
           <div className="flex items-center justify-center gap-3 mt-4">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-yellow-500" />
-            <div className="w-2 h-2 rounded-full bg-yellow-500" />
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-yellow-500" />
+            <div className="w-16 h-px bg-gradient-to-r from-transparent to-[#c9956c]" />
+            <div className="w-2 h-2 rounded-full bg-[#c9956c]" />
+            <div className="w-16 h-px bg-gradient-to-l from-transparent to-[#c9956c]" />
           </div>
         </motion.div>
 
@@ -486,8 +540,8 @@ const AllServicesModern = () => {
               transition={{ duration: 0.5, delay: (id % 3) * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -6 }}
-              className="group bg-zinc-900 border border-white/5 rounded-2xl p-8 text-center
-              hover:border-yellow-500/15 shadow-lg shadow-black/30
+              className="group bg-[#1b2a3b] border border-white/5 rounded-2xl p-8 text-center
+              hover:border-[#c9956c]/15 shadow-lg shadow-black/30
               transition-all duration-300"
             >
               <div
@@ -496,21 +550,28 @@ const AllServicesModern = () => {
                 <service.icon className={`w-8 h-8 ${service.accent}`} />
               </div>
 
-              <h3 className="font-serif text-xl font-semibold text-white tracking-wide mb-3">
+              <h3
+                className="text-xl font-semibold text-white tracking-wide mb-3"
+                style={{ fontFamily: "'Cinzel', serif" }}
+              >
                 {service.title}
               </h3>
 
-              <p className="text-zinc-400 text-sm leading-relaxed font-light mb-6">
+              <p
+                className="text-[#94a3b8] text-sm leading-relaxed font-light mb-6"
+                style={{ fontFamily: "'Lato', sans-serif" }}
+              >
                 {service.desc}
               </p>
 
               <a href={`tel:${phone_number}`}>
                 <button
-                  className="w-full py-2.5 rounded-md font-semibold text-sm text-black
-                  bg-gradient-to-r from-yellow-500 to-yellow-400
-                  shadow-md shadow-yellow-500/20
-                  hover:shadow-yellow-500/40 hover:-translate-y-0.5
+                  className="w-full py-2.5 rounded-md font-semibold text-sm text-white
+                  bg-gradient-to-r from-[#c9956c] to-[#e8b89a]
+                  shadow-md shadow-[#c9956c]/20
+                  hover:shadow-[#c9956c]/40 hover:-translate-y-0.5
                   transition-all duration-200"
+                  style={{ fontFamily: "'Raleway', sans-serif" }}
                 >
                   Get in Touch
                 </button>
@@ -526,10 +587,10 @@ const AllServicesModern = () => {
 /* ── Home Last / CTA ── */
 function HomeLastDesign() {
   return (
-    <section className="relative py-24 px-6 bg-zinc-900 overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
+    <section className="relative py-24 px-6 bg-[#1b2a3b] overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#c9956c_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/subtle-dots.png')] opacity-5 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c9956c]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Image */}
@@ -541,17 +602,17 @@ function HomeLastDesign() {
           className="flex justify-center"
         >
           <div className="relative">
-            <div className="absolute -inset-3 rounded-full bg-gradient-to-tr from-yellow-500/20 to-transparent blur-2xl" />
+            <div className="absolute -inset-3 rounded-full bg-gradient-to-tr from-[#c9956c]/20 to-transparent blur-2xl" />
             <div
               className="relative w-72 h-72 md:w-88 md:h-88 rounded-full overflow-hidden
-              border border-yellow-500/20 shadow-2xl shadow-black/60"
+              border border-[#c9956c]/20 shadow-2xl shadow-black/60"
             >
               <img
                 src="https://i.pinimg.com/1200x/3d/ef/55/3def558579612a517065a7c48310e918.jpg"
                 alt={person_name}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 rounded-full border border-yellow-400/10" />
+              <div className="absolute inset-0 rounded-full border border-[#c9956c]/10" />
             </div>
           </div>
         </motion.div>
@@ -564,27 +625,39 @@ function HomeLastDesign() {
           viewport={{ once: true }}
           className="space-y-6 text-center md:text-left"
         >
-          <span className="text-[10px] font-semibold tracking-[0.22em] uppercase text-yellow-500">
+          <span
+            className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#c9956c]"
+            style={{ fontFamily: "'Raleway', sans-serif" }}
+          >
             Meet Your Guide
           </span>
 
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white tracking-wide leading-tight">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white tracking-wide leading-tight"
+            style={{ fontFamily: "'Cinzel', serif" }}
+          >
             {person_name}
           </h2>
-          <div className="w-14 h-px bg-gradient-to-r from-yellow-500 to-transparent mx-auto md:mx-0" />
+          <div className="w-14 h-px bg-gradient-to-r from-[#c9956c] to-transparent mx-auto md:mx-0" />
 
-          <h3 className="text-base md:text-lg font-medium text-zinc-300 tracking-wide">
+          <h3
+            className="text-base md:text-lg font-medium text-[#cbd5e1] tracking-wide"
+            style={{ fontFamily: "'Lato', sans-serif" }}
+          >
             Trusted Traditional Kerala Consultation
           </h3>
 
-          <p className="text-zinc-400 leading-relaxed text-sm font-light">
+          <p
+            className="text-[#94a3b8] leading-relaxed text-sm font-light"
+            style={{ fontFamily: "'Lato', sans-serif" }}
+          >
             With deep understanding of{" "}
-            <span className="text-yellow-400 font-medium">Vastu</span>,{" "}
-            <span className="text-yellow-300 font-medium">
+            <span className="text-[#c9956c] font-medium">Vastu</span>,{" "}
+            <span className="text-[#d4ac84] font-medium">
               horoscope interpretation
             </span>
             , and{" "}
-            <span className="text-yellow-200 font-medium">
+            <span className="text-[#e8b89a] font-medium">
               holistic well-being consultation
             </span>
             , {person_name} provides calm, thoughtful guidance to help
@@ -594,10 +667,11 @@ function HomeLastDesign() {
           <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
             <a
               href={`tel:${phone_number}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-sm text-black
-              bg-gradient-to-r from-yellow-500 to-yellow-400
-              shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/40 hover:-translate-y-0.5
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-sm text-white
+              bg-gradient-to-r from-[#c9956c] to-[#e8b89a]
+              shadow-lg shadow-[#c9956c]/20 hover:shadow-[#c9956c]/40 hover:-translate-y-0.5
               transition-all duration-200"
+              style={{ fontFamily: "'Raleway', sans-serif" }}
             >
               <Phone size={16} /> Call Now
             </a>
@@ -607,14 +681,18 @@ function HomeLastDesign() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-sm text-white
               bg-white/5 border border-white/10
-              hover:bg-white/10 hover:border-yellow-500/30 hover:-translate-y-0.5
+              hover:bg-white/10 hover:border-[#c9956c]/30 hover:-translate-y-0.5
               transition-all duration-200"
+              style={{ fontFamily: "'Raleway', sans-serif" }}
             >
               <MessageCircle size={16} /> Chat on WhatsApp
             </a>
           </div>
 
-          <p className="text-[10px] tracking-[0.18em] uppercase text-yellow-500/80 pt-1">
+          <p
+            className="text-[10px] tracking-[0.18em] uppercase text-[#c9956c]/80 pt-1"
+            style={{ fontFamily: "'Raleway', sans-serif" }}
+          >
             ✦ Trusted Guidance &nbsp;•&nbsp; Calm Insights &nbsp;•&nbsp;
             Personal Clarity
           </p>

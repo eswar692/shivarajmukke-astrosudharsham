@@ -9,9 +9,9 @@ const Header = () => {
       className="w-full "
       style={{
         background:
-          "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)",
-        borderBottom: "1px solid rgba(212,175,55,0.2)",
-        boxShadow: "0 4px 40px rgba(212,175,55,0.08)",
+          "linear-gradient(135deg, #0d1b2a 0%, #1b2a3b 50%, #0d1b2a 100%)",
+        borderBottom: "1px solid rgba(201,149,108,0.2)",
+        boxShadow: "0 4px 40px rgba(201,149,108,0.08)",
       }}
     >
       {/* Top accent line */}
@@ -19,7 +19,7 @@ const Header = () => {
         style={{
           height: "2px",
           background:
-            "linear-gradient(90deg, transparent, #d4af37, #f5e27a, #d4af37, transparent)",
+            "linear-gradient(90deg, transparent, #c9956c, #e8b89a, #c9956c, transparent)",
         }}
       />
       <div className="w-full md:w-[92%] mx-auto px-4 py-3 md:py-4">
@@ -56,7 +56,7 @@ const Logo = () => {
               inset: "-4px",
               borderRadius: "50%",
               background:
-                "conic-gradient(from 0deg, #d4af37, #f5e27a, #d4af37, #8b6914, #d4af37)",
+                "conic-gradient(from 0deg, #c9956c, #e8b89a, #c9956c, #a0714f, #c9956c)",
               animation: "spin 8s linear infinite",
               opacity: imgHovered ? 1 : 0.6,
               transition: "opacity 0.3s ease",
@@ -67,7 +67,7 @@ const Logo = () => {
               position: "absolute",
               inset: "2px",
               borderRadius: "50%",
-              background: "#0a0a0a",
+              background: "#0d1b2a",
             }}
           />
           <div
@@ -97,13 +97,13 @@ const Logo = () => {
           {/* Company name */}
           <h1
             style={{
-              fontFamily: "'Playfair Display', 'Georgia', serif",
+              fontFamily: "'Cinzel', 'Georgia', serif",
               fontWeight: 800,
               fontSize: "clamp(1.4rem, 3vw, 2rem)",
               color: "#fff",
               letterSpacing: "0.04em",
               lineHeight: 1.1,
-              textShadow: "0 0 30px rgba(212,175,55,0.3)",
+              textShadow: "0 0 30px rgba(201,149,108,0.3)",
             }}
           >
             {company_name}
@@ -115,14 +115,14 @@ const Logo = () => {
               style={{
                 height: "1px",
                 width: "24px",
-                background: "linear-gradient(90deg, transparent, #d4af37)",
+                background: "linear-gradient(90deg, transparent, #c9956c)",
               }}
             />
             <span
               style={{
                 fontFamily: "'Cormorant Garamond', 'Georgia', serif",
                 fontSize: "0.7rem",
-                color: "#d4af37",
+                color: "#c9956c",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
                 fontStyle: "italic",
@@ -134,7 +134,7 @@ const Logo = () => {
               style={{
                 height: "1px",
                 width: "24px",
-                background: "linear-gradient(90deg, #d4af37, transparent)",
+                background: "linear-gradient(90deg, #c9956c, transparent)",
               }}
             />
           </div>
@@ -142,7 +142,7 @@ const Logo = () => {
           {/* Address — hidden on very small screens */}
           <p
             style={{
-              fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
+              fontFamily: "'Lato', 'Helvetica Neue', sans-serif",
               fontSize: "clamp(0.65rem, 1.2vw, 0.78rem)",
               color: "rgba(220,220,220,0.75)",
               marginTop: "4px",
@@ -162,7 +162,7 @@ const Logo = () => {
             <br />
             <span
               style={{
-                color: "#d4af37",
+                color: "#c9956c",
                 fontWeight: 600,
                 letterSpacing: "0.03em",
               }}
@@ -177,7 +177,7 @@ const Logo = () => {
       <Menu />
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:ital,wght@1,400&family=DM+Sans:wght@400;500&family=Outfit:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Cormorant+Garamond:ital,wght@1,400&family=Lato:wght@400;500&family=Raleway:wght@400;500;600&display=swap');
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
@@ -207,28 +207,28 @@ const Menu = () => {
           <Link
             to="/contact"
             style={{
-              fontFamily: "'Outfit', sans-serif",
+              fontFamily: "'Raleway', sans-serif",
               fontSize: "0.82rem",
               fontWeight: 600,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              color: "#0a0a0a",
-              background: "linear-gradient(135deg, #d4af37, #f5e27a)",
+              color: "#ffffff",
+              background: "linear-gradient(135deg, #c9956c, #e8b89a)",
               padding: "9px 22px",
               borderRadius: "4px",
               textDecoration: "none",
-              boxShadow: "0 2px 16px rgba(212,175,55,0.35)",
+              boxShadow: "0 2px 16px rgba(201,149,108,0.35)",
               transition: "all 0.25s ease",
               display: "inline-block",
             }}
             onMouseEnter={(e) => {
               (e.target as HTMLElement).style.boxShadow =
-                "0 4px 24px rgba(212,175,55,0.55)";
+                "0 4px 24px rgba(201,149,108,0.55)";
               (e.target as HTMLElement).style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
               (e.target as HTMLElement).style.boxShadow =
-                "0 2px 16px rgba(212,175,55,0.35)";
+                "0 2px 16px rgba(201,149,108,0.35)";
               (e.target as HTMLElement).style.transform = "translateY(0)";
             }}
           >
@@ -249,13 +249,13 @@ const Menu = () => {
           width: "42px",
           height: "42px",
           borderRadius: "8px",
-          border: "1px solid rgba(212,175,55,0.4)",
-          background: "rgba(212,175,55,0.08)",
+          border: "1px solid rgba(201,149,108,0.4)",
+          background: "rgba(201,149,108,0.08)",
           cursor: "pointer",
           transition: "all 0.2s ease",
         }}
       >
-        <MenuIcon size={20} color="#d4af37" strokeWidth={2} />
+        <MenuIcon size={20} color="#c9956c" strokeWidth={2} />
       </button>
 
       {open && <MobileMenu setOpen={setOpen} />}
@@ -280,12 +280,12 @@ const NavLink = ({
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
-          fontFamily: "'Outfit', sans-serif",
+          fontFamily: "'Raleway', sans-serif",
           fontSize: "0.88rem",
           fontWeight: 500,
           letterSpacing: "0.06em",
           textTransform: "uppercase",
-          color: hovered ? "#d4af37" : "rgba(255,255,255,0.8)",
+          color: hovered ? "#c9956c" : "rgba(255,255,255,0.8)",
           textDecoration: "none",
           padding: "8px 14px",
           borderRadius: "4px",
@@ -303,7 +303,7 @@ const NavLink = ({
             left: "14px",
             right: "14px",
             height: "1px",
-            background: "linear-gradient(90deg, #d4af37, #f5e27a)",
+            background: "linear-gradient(90deg, #c9956c, #e8b89a)",
             transform: hovered ? "scaleX(1)" : "scaleX(0)",
             transformOrigin: "left",
             transition: "transform 0.3s ease",
@@ -322,7 +322,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         inset: 0,
         zIndex: 999999,
         background:
-          "linear-gradient(160deg, #0a0a0a 0%, #1a1a2e 60%, #0f0f0f 100%)",
+          "linear-gradient(160deg, #0d1b2a 0%, #1b2a3b 60%, #0f1e2e 100%)",
         display: "flex",
         flexDirection: "column",
         padding: "28px 24px",
@@ -335,17 +335,17 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          borderBottom: "1px solid rgba(212,175,55,0.2)",
+          borderBottom: "1px solid rgba(201,149,108,0.2)",
           paddingBottom: "20px",
           marginBottom: "8px",
         }}
       >
         <span
           style={{
-            fontFamily: "'Playfair Display', serif",
+            fontFamily: "'Cinzel', serif",
             fontSize: "1.3rem",
             fontWeight: 700,
-            color: "#d4af37",
+            color: "#c9956c",
             letterSpacing: "0.05em",
           }}
         >
@@ -358,15 +358,15 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
             width: "40px",
             height: "40px",
             borderRadius: "50%",
-            border: "1px solid rgba(212,175,55,0.3)",
-            background: "rgba(212,175,55,0.08)",
+            border: "1px solid rgba(201,149,108,0.3)",
+            background: "rgba(201,149,108,0.08)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
           }}
         >
-          <X size={18} color="#d4af37" />
+          <X size={18} color="#c9956c" />
         </button>
       </div>
 
@@ -393,10 +393,10 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
                   justifyContent: "space-between",
                   padding: "16px 20px",
                   borderRadius: "8px",
-                  border: "1px solid rgba(212,175,55,0.08)",
+                  border: "1px solid rgba(201,149,108,0.08)",
                   background: "rgba(255,255,255,0.03)",
                   color: "rgba(255,255,255,0.88)",
-                  fontFamily: "'Outfit', sans-serif",
+                  fontFamily: "'Raleway', sans-serif",
                   fontSize: "1rem",
                   fontWeight: 500,
                   letterSpacing: "0.05em",
@@ -405,20 +405,20 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.background = "rgba(212,175,55,0.1)";
-                  el.style.color = "#d4af37";
-                  el.style.borderColor = "rgba(212,175,55,0.3)";
+                  el.style.background = "rgba(201,149,108,0.1)";
+                  el.style.color = "#c9956c";
+                  el.style.borderColor = "rgba(201,149,108,0.3)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement;
                   el.style.background = "rgba(255,255,255,0.03)";
                   el.style.color = "rgba(255,255,255,0.88)";
-                  el.style.borderColor = "rgba(212,175,55,0.08)";
+                  el.style.borderColor = "rgba(201,149,108,0.08)";
                 }}
               >
                 {item}
                 <span
-                  style={{ color: "#d4af37", fontSize: "1.1rem", opacity: 0.6 }}
+                  style={{ color: "#c9956c", fontSize: "1.1rem", opacity: 0.6 }}
                 >
                   ›
                 </span>
@@ -434,13 +434,13 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           marginTop: "auto",
           padding: "20px",
           borderRadius: "8px",
-          border: "1px solid rgba(212,175,55,0.15)",
-          background: "rgba(212,175,55,0.04)",
+          border: "1px solid rgba(201,149,108,0.15)",
+          background: "rgba(201,149,108,0.04)",
         }}
       >
         <p
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'Lato', sans-serif",
             fontSize: "0.78rem",
             color: "rgba(220,220,220,0.6)",
             lineHeight: 1.7,
@@ -451,7 +451,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           <br />
           {address.District}, {address.state} – {address.pincode}
           <br />
-          <span style={{ color: "#d4af37", fontWeight: 600 }}>
+          <span style={{ color: "#c9956c", fontWeight: 600 }}>
             📞 +91 {phone_number}
           </span>
         </p>
