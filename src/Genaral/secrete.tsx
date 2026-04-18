@@ -1,17 +1,17 @@
 const phone_number = "9353261897";
 const email = "";
 const whatsapp_number = "9353261897";
-const company_name = "Pandith Vishnu Poduvala";
-const person_name = "Pandith Vishnu Poduvala";
+const company_name = "Pandith Vishnu Poduval";
+const person_name = "Pandith Vishnu Poduval";
 const address = {
-  line1: "42, Raju Complex, Korahalli,",
-  line2: "4th cross, ramalayam street, Baragur",
-  state: "Karnataka",
-  pincode: "573225",
-  District: "Hassan",
-  country: "India",
+  line1: "",
+  line2: "",
+  state: "",
+  pincode: "",
+  District: "",
+  country: "",
 };
-const website_url = "https://www.keralavedaconsult.in/";
+const website_url = "https://panditvishnupoduval.in/";
 
 export {
   phone_number,
