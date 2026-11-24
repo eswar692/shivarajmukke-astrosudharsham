@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { label: "Testimonials", path: "/testimonials" },
   { label: "Contact", path: "/contact" },
 ];
+import { createPortal } from "react-dom";
 
 const Header = () => {
   return (
@@ -171,7 +172,7 @@ const Menu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 relative">
       {/* Desktop Glass Pill Nav */}
       <nav
         className="hidden lg:flex items-center gap-1"
@@ -286,20 +287,32 @@ const NavLink = ({
   );
 };
 
-const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
+
+const MobileMenu = ({
+  setOpen,
+}: {
+  setOpen: (open: boolean) => void;
+}) => {
   const location = useLocation();
 
-  return (
+  return createPortal(
     <div
       style={{
         position: "fixed",
         inset: 0,
-        zIndex: 999999,
+        width: "100%",
+        height: "100vh",
+        zIndex: 9999999,
+
         background:
           "radial-gradient(circle at top right, #1e293b 0%, #090d16 65%)",
+
         display: "flex",
         flexDirection: "column",
         padding: "24px",
+        boxSizing: "border-box",
+        overflowY: "auto",
+
         animation: "menuFade 0.25s ease",
       }}
     >
@@ -323,6 +336,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         >
           {company_name}
         </span>
+
         <button
           onClick={() => setOpen(false)}
           aria-label="Close menu"
@@ -342,7 +356,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         </button>
       </div>
 
-      {/* Links */}
+      {/* Navigation Links */}
       <ul
         style={{
           display: "flex",
@@ -355,6 +369,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
       >
         {NAV_ITEMS.map((item) => {
           const isActive = location.pathname === item.path;
+
           return (
             <li key={item.label}>
               <Link
@@ -387,7 +402,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         })}
       </ul>
 
-      {/* Bottom Direct Call Card */}
+      {/* Bottom Call Card */}
       <div
         style={{
           marginTop: "auto",
@@ -413,6 +428,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           >
             Direct Consultation Line
           </p>
+
           <a
             href={`tel:+91${phone_number}`}
             style={{
@@ -426,6 +442,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
             +91 {phone_number}
           </a>
         </div>
+
         <a
           href={`tel:+91${phone_number}`}
           aria-label="Call now"
@@ -443,6 +460,7 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           <PhoneCall size={18} />
         </a>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

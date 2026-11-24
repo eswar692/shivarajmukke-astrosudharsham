@@ -1,6 +1,6 @@
 const phone_number = "9900599033";
 const email = "";
-const whatsapp_number = "9900599033";
+const whatsapp_number = "919900599033";
 const company_name = "Pandith Sudharshan Acharya";
 const person_name = "Pandith Sudharshan Acharya";
 

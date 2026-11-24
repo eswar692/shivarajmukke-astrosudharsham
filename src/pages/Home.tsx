@@ -46,7 +46,7 @@ const NEW_HOME_IMAGES = {
     "https://images.pexels.com/photos/210607/pexels-photo-210607.jpeg?auto=compress&cs=tinysrgb&w=1200",
   ],
   guide:
-    "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    "https://i.pinimg.com/736x/96/57/a5/9657a59ba3ac24d8ca485737decf5e61.jpg",
 };
 
 const Home = () => {
