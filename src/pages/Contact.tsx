@@ -209,7 +209,7 @@ export default function Contact() {
             <span className="text-amber-300 font-medium">
               Vastu consultations
             </span>
-            . Gain clarity and direction through personalized traditional Kerala
+            . Gain clarity and direction through personalized traditional Mysore
             insights into{" "}
             <span className="text-white font-semibold">
               relationships, career, financial planning, and personal well-being

@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="w-12 h-0.5 bg-gradient-to-r from-amber-400 to-transparent" />
           <p className="text-sm leading-relaxed text-slate-400">
             <span className="text-white font-semibold">{company_name}</span>{" "}
-            offers traditional Kerala wellness consultations rooted in years of
+            offers traditional mysore wellness consultations rooted in years of
             experience and responsible practice.{" "}
             <span className="text-amber-300 font-semibold">{person_name}</span>{" "}
             provides thoughtful sessions focused on clarity, balance, and

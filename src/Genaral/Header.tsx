@@ -144,7 +144,7 @@ const Logo = () => {
               }}
             >
               <Sparkles size={11} color="#fbbf24" />
-              Kerala Heritage &amp; Consultation
+              Mysore Heritage &amp; Consultation
             </span>
           </div>
         </div>

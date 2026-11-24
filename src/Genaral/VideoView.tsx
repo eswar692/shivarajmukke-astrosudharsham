@@ -37,7 +37,7 @@ const ImageView = () => {
           style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
           <Sparkles size={12} className="text-amber-400" />
-          Traditional Kerala Consultation
+          Traditional Mysore Consultation
         </motion.span>
 
         {/* Heading */}
@@ -77,7 +77,7 @@ const ImageView = () => {
           className="mt-5 text-slate-300 text-sm md:text-base leading-relaxed max-w-xs md:max-w-lg font-normal"
           style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
         >
-          Thoughtful Kerala wellness and life consultation designed to bring
+          Thoughtful Mysore wellness and life consultation designed to bring
           calm clarity, balance, and confident decisions.
         </motion.p>
 

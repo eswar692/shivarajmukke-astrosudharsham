@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "What Kind of Products Are Available?",
     answer:
-      "Traditional Kerala wellness products, gemstones, and well-being items are available.",
+      "Traditional Mysore wellness products, gemstones, and well-being items are available.",
   },
   {
     question: "Are Learning Sessions Offered?",
@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "What Is Covered in the Learning Sessions?",
     answer:
-      "We cover horoscope reading, palmistry basics, and traditional Kerala knowledge practices.",
+      "We cover horoscope reading, palmistry basics, and traditional mysore knowledge practices.",
   },
 ];
 

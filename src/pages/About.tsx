@@ -137,8 +137,8 @@ export default function About() {
               >
                 {person_name}
               </span>{" "}
-              is a trusted and respected traditional Kerala practitioner with
-              decades of experience. Grounded in authentic Kerala heritage and a
+              is a trusted and respected traditional Mysore practitioner with
+              decades of experience. Grounded in authentic mysore heritage and a
               genuine commitment to helping others, he provides calm, reliable
               guidance to individuals and families across India.
             </p>
@@ -150,7 +150,7 @@ export default function About() {
               <span className="font-semibold text-white">{person_name}</span>{" "}
               offers personalized consultations covering horoscope reading,
               Vastu guidance, palmistry, and direct phone sessions. His work
-              bridges traditional Kerala wisdom with practical clarity for
+              bridges traditional Mysore wisdom with practical clarity for
               personal well-being and life decisions.
             </p>
 

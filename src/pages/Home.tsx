@@ -114,7 +114,7 @@ const Problems = () => {
     },
     {
       title: "Life Path Clarity",
-      desc: "Discover strengths and direction through traditional Kerala analysis.",
+      desc: "Discover strengths and direction through traditional Mysore analysis.",
       img: NEW_HOME_IMAGES.problems[8],
     },
     {
@@ -211,7 +211,7 @@ const AboutAstrologer = () => {
 
           <p className="text-slate-300 leading-relaxed text-base">
             Meet <span className="font-semibold text-white">{company_name}</span>,
-            a trusted practitioner whose knowledge is rooted in traditional Kerala
+            a trusted practitioner whose knowledge is rooted in traditional Mysore
             wisdom. His guidance has helped many individuals discover{" "}
             <span className="font-semibold text-amber-300">
               clarity, balance, and confidence
@@ -465,7 +465,7 @@ const AllServicesModern = () => {
     {
       title: "Traditional Rituals",
       icon: Sparkles,
-      desc: "Sacred Kerala practices aimed at inner balance and personal grounding.",
+      desc: "Sacred Mysore practices aimed at inner balance and personal grounding.",
       accent: "text-violet-300",
       bg: "bg-violet-500/10 border-violet-400/25",
     },
@@ -589,7 +589,7 @@ function HomeLastDesign() {
           <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-transparent mx-auto md:mx-0" />
 
           <h3 className="text-base md:text-lg font-medium text-amber-100/90 tracking-wide">
-            Trusted Traditional Kerala Consultation
+            Trusted Traditional Mysore Consultation
           </h3>
 
           <p className="text-slate-400 leading-relaxed text-sm">
