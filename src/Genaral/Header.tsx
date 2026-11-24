@@ -1,28 +1,41 @@
-import { MenuIcon, X } from "lucide-react";
+import { ArrowUpRight, MenuIcon, PhoneCall, Sparkles, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { address, company_name, phone_number } from "./secrete";
+import { Link, useLocation } from "react-router-dom";
+import { company_name, phone_number } from "./secrete";
+
+const NEW_LOGO_IMAGE_URL =
+  "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcTdmfJuzBjdQuOcDPSS_rFeWBgtY2lUJ9kW1ASezqDUexn3tQlW0k33FGvM7GrEH3-5V-MRbyffbgtjV8A";
+
+const NAV_ITEMS = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Services", path: "/services" },
+  { label: "Testimonials", path: "/testimonials" },
+  { label: "Contact", path: "/contact" },
+];
 
 const Header = () => {
   return (
     <header
-      className="w-full "
+      className="w-full sticky top-0 z-50"
       style={{
         background:
-          "linear-gradient(135deg, #0d1b2a 0%, #1b2a3b 50%, #0d1b2a 100%)",
-        borderBottom: "1px solid rgba(201,149,108,0.2)",
-        boxShadow: "0 4px 40px rgba(201,149,108,0.08)",
+          "linear-gradient(135deg, rgba(9, 13, 22, 0.94) 0%, rgba(17, 24, 39, 0.92) 50%, rgba(9, 13, 22, 0.96) 100%)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        borderBottom: "1px solid rgba(245, 158, 11, 0.18)",
+        boxShadow: "0 10px 40px rgba(0, 0, 0, 0.45)",
       }}
     >
-      {/* Top accent line */}
+      {/* Top luminous gradient bar */}
       <div
         style={{
           height: "2px",
           background:
-            "linear-gradient(90deg, transparent, #c9956c, #e8b89a, #c9956c, transparent)",
+            "linear-gradient(90deg, transparent 0%, #d97706 25%, #fde68a 50%, #d97706 75%, transparent 100%)",
         }}
       />
-      <div className="w-full md:w-[92%] mx-auto px-4 py-3 md:py-4">
+      <div className="w-full md:w-[92%] mx-auto px-4 py-3.5 md:py-4">
         <Logo />
       </div>
     </header>
@@ -36,29 +49,32 @@ const Logo = () => {
 
   return (
     <div className="flex items-center justify-between w-full">
-      {/* Left: Logo + Info */}
-      <div className="flex items-center gap-5 md:gap-7">
-        {/* Logo with ornate border */}
+      {/* Left: Emblem + Brand */}
+      <Link
+        to="/"
+        className="flex items-center gap-4 md:gap-5 group"
+        style={{ textDecoration: "none" }}
+      >
+        {/* Emblem with modern conic halo */}
         <div
           onMouseEnter={() => setImgHovered(true)}
           onMouseLeave={() => setImgHovered(false)}
           style={{
             position: "relative",
-            width: "68px",
-            height: "68px",
+            width: "60px",
+            height: "60px",
             flexShrink: 0,
           }}
         >
-          {/* Rotating ring */}
           <div
             style={{
               position: "absolute",
-              inset: "-4px",
-              borderRadius: "50%",
+              inset: "-3px",
+              borderRadius: "18px",
               background:
-                "conic-gradient(from 0deg, #c9956c, #e8b89a, #c9956c, #a0714f, #c9956c)",
-              animation: "spin 8s linear infinite",
-              opacity: imgHovered ? 1 : 0.6,
+                "conic-gradient(from 45deg, #f59e0b, #fef08a, #b45309, #fbbf24, #f59e0b)",
+              animation: "spinSlow 10s linear infinite",
+              opacity: imgHovered ? 1 : 0.75,
               transition: "opacity 0.3s ease",
             }}
           />
@@ -66,120 +82,86 @@ const Logo = () => {
             style={{
               position: "absolute",
               inset: "2px",
-              borderRadius: "50%",
-              background: "#0d1b2a",
+              borderRadius: "15px",
+              background: "#090d16",
             }}
           />
           <div
             style={{
               position: "absolute",
               inset: "4px",
-              borderRadius: "50%",
+              borderRadius: "13px",
               overflow: "hidden",
             }}
           >
             <img
-              src="https://i.pinimg.com/1200x/19/6b/2d/196b2d46fb8864dfb588c18655d4a3f1.jpg"
-              alt={`${company_name} Logo`}
+              src={NEW_LOGO_IMAGE_URL}
+              alt={`${company_name} Emblem`}
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                transform: imgHovered ? "scale(1.12)" : "scale(1)",
-                transition: "transform 0.5s ease",
+                transform: imgHovered ? "scale(1.1)" : "scale(1)",
+                transition: "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
               }}
             />
           </div>
         </div>
 
-        {/* Text block */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-          {/* Company name */}
+        {/* Brand Typography */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
           <h1
             style={{
-              fontFamily: "'Cinzel', 'Georgia', serif",
-              fontWeight: 800,
-              fontSize: "clamp(1.4rem, 3vw, 2rem)",
-              color: "#fff",
-              letterSpacing: "0.04em",
-              lineHeight: 1.1,
-              textShadow: "0 0 30px rgba(201,149,108,0.3)",
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontWeight: 700,
+              fontSize: "clamp(1.3rem, 2.7vw, 1.85rem)",
+              background:
+                "linear-gradient(95deg, #ffffff 0%, #fef3c7 60%, #fbbf24 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              letterSpacing: "0.02em",
+              lineHeight: 1.12,
+              margin: 0,
             }}
           >
             {company_name}
           </h1>
 
-          {/* Est. badge */}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <div
-              style={{
-                height: "1px",
-                width: "24px",
-                background: "linear-gradient(90deg, transparent, #c9956c)",
-              }}
-            />
+          {/* Modern Pill Tagline */}
+          <div className="flex items-center gap-2">
             <span
               style={{
-                fontFamily: "'Cormorant Garamond', 'Georgia', serif",
-                fontSize: "0.7rem",
-                color: "#c9956c",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                fontStyle: "italic",
-              }}
-            >
-              Est. 1950
-            </span>
-            <div
-              style={{
-                height: "1px",
-                width: "24px",
-                background: "linear-gradient(90deg, #c9956c, transparent)",
-              }}
-            />
-          </div>
-
-          {/* Address — hidden on very small screens */}
-          <p
-            style={{
-              fontFamily: "'Lato', 'Helvetica Neue', sans-serif",
-              fontSize: "clamp(0.65rem, 1.2vw, 0.78rem)",
-              color: "rgba(220,220,220,0.75)",
-              marginTop: "4px",
-              lineHeight: 1.6,
-              maxWidth: "360px",
-            }}
-            className="hidden sm:block"
-          >
-            <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>
-              {address.line1}
-            </span>
-            {", "}
-            {address.line2}
-            <br />
-            {address.District}, {address.state} – {address.pincode},{" "}
-            {address.country}
-            <br />
-            <span
-              style={{
-                color: "#c9956c",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: "0.68rem",
                 fontWeight: 600,
-                letterSpacing: "0.03em",
+                color: "#fbbf24",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
               }}
             >
-              📞 +91 {phone_number}
+              <Sparkles size={11} color="#fbbf24" />
+              Kerala Heritage &amp; Consultation
             </span>
-          </p>
+          </div>
         </div>
-      </div>
+      </Link>
 
-      {/* Right: Menu */}
+      {/* Right: Navigation */}
       <Menu />
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Cormorant+Garamond:ital,wght@1,400&family=Lato:wght@400;500&family=Raleway:wght@400;500;600&display=swap');
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes menuFade {
+          from { opacity: 0; transform: translateY(-8px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
       `}</style>
     </div>
   );
@@ -189,53 +171,55 @@ const Menu = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div>
-      {/* Desktop nav */}
-      <ul className="hidden lg:flex items-center gap-1">
-        {["Home", "About", "Services", "Contact"].map((item, i) => (
-          <NavLink
-            key={item}
-            to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-            delay={i * 0.05}
-          >
-            {item}
+    <div className="flex items-center gap-3">
+      {/* Desktop Glass Pill Nav */}
+      <nav
+        className="hidden lg:flex items-center gap-1"
+        style={{
+          background: "rgba(255, 255, 255, 0.035)",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
+          borderRadius: "999px",
+          padding: "5px 6px",
+        }}
+      >
+        {NAV_ITEMS.map((item) => (
+          <NavLink key={item.label} to={item.path}>
+            {item.label}
           </NavLink>
         ))}
+      </nav>
 
-        {/* CTA Button */}
-        <li style={{ marginLeft: "16px" }}>
-          <Link
-            to="/contact"
-            style={{
-              fontFamily: "'Raleway', sans-serif",
-              fontSize: "0.82rem",
-              fontWeight: 600,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "#ffffff",
-              background: "linear-gradient(135deg, #c9956c, #e8b89a)",
-              padding: "9px 22px",
-              borderRadius: "4px",
-              textDecoration: "none",
-              boxShadow: "0 2px 16px rgba(201,149,108,0.35)",
-              transition: "all 0.25s ease",
-              display: "inline-block",
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.boxShadow =
-                "0 4px 24px rgba(201,149,108,0.55)";
-              (e.target as HTMLElement).style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.boxShadow =
-                "0 2px 16px rgba(201,149,108,0.35)";
-              (e.target as HTMLElement).style.transform = "translateY(0)";
-            }}
-          >
-            Get in Touch
-          </Link>
-        </li>
-      </ul>
+      {/* Modern Luminous CTA */}
+      <Link
+        to="/contact"
+        className="hidden sm:inline-flex items-center gap-2"
+        style={{
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          fontSize: "0.8rem",
+          fontWeight: 700,
+          letterSpacing: "0.04em",
+          color: "#090d16",
+          background: "linear-gradient(135deg, #fde68a 0%, #f59e0b 100%)",
+          padding: "10px 20px",
+          borderRadius: "999px",
+          textDecoration: "none",
+          boxShadow: "0 4px 20px rgba(245, 158, 11, 0.3)",
+          transition: "all 0.25s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-1px)";
+          e.currentTarget.style.boxShadow =
+            "0 6px 26px rgba(245, 158, 11, 0.5)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.boxShadow =
+            "0 4px 20px rgba(245, 158, 11, 0.3)";
+        }}
+      >
+        <span>Book Consultation</span>
+        <ArrowUpRight size={15} strokeWidth={2.5} />
+      </Link>
 
       {/* Mobile menu toggle */}
       <button
@@ -248,14 +232,14 @@ const Menu = () => {
           justifyContent: "center",
           width: "42px",
           height: "42px",
-          borderRadius: "8px",
-          border: "1px solid rgba(201,149,108,0.4)",
-          background: "rgba(201,149,108,0.08)",
+          borderRadius: "12px",
+          border: "1px solid rgba(251, 191, 36, 0.3)",
+          background: "rgba(251, 191, 36, 0.08)",
           cursor: "pointer",
           transition: "all 0.2s ease",
         }}
       >
-        <MenuIcon size={20} color="#c9956c" strokeWidth={2} />
+        <MenuIcon size={20} color="#fbbf24" strokeWidth={2} />
       </button>
 
       {open && <MobileMenu setOpen={setOpen} />}
@@ -269,52 +253,42 @@ const NavLink = ({
 }: {
   to: string;
   children: React.ReactNode;
-  delay?: number;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const location = useLocation();
+  const isActive = location.pathname === to;
 
   return (
-    <li style={{ listStyle: "none" }}>
-      <Link
-        to={to}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        style={{
-          fontFamily: "'Raleway', sans-serif",
-          fontSize: "0.88rem",
-          fontWeight: 500,
-          letterSpacing: "0.06em",
-          textTransform: "uppercase",
-          color: hovered ? "#c9956c" : "rgba(255,255,255,0.8)",
-          textDecoration: "none",
-          padding: "8px 14px",
-          borderRadius: "4px",
-          position: "relative",
-          transition: "color 0.25s ease",
-          display: "block",
-        }}
-      >
-        {children}
-        {/* Underline */}
-        <span
-          style={{
-            position: "absolute",
-            bottom: "4px",
-            left: "14px",
-            right: "14px",
-            height: "1px",
-            background: "linear-gradient(90deg, #c9956c, #e8b89a)",
-            transform: hovered ? "scaleX(1)" : "scaleX(0)",
-            transformOrigin: "left",
-            transition: "transform 0.3s ease",
-          }}
-        />
-      </Link>
-    </li>
+    <Link
+      to={to}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        fontSize: "0.84rem",
+        fontWeight: isActive ? 600 : 500,
+        letterSpacing: "0.02em",
+        color: isActive || hovered ? "#fde68a" : "rgba(241, 245, 249, 0.78)",
+        background: isActive
+          ? "rgba(245, 158, 11, 0.16)"
+          : hovered
+            ? "rgba(255, 255, 255, 0.06)"
+            : "transparent",
+        textDecoration: "none",
+        padding: "8px 16px",
+        borderRadius: "999px",
+        transition: "all 0.22s ease",
+        display: "inline-block",
+      }}
+    >
+      {children}
+    </Link>
   );
 };
 
 const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
+  const location = useLocation();
+
   return (
     <div
       style={{
@@ -322,11 +296,11 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         inset: 0,
         zIndex: 999999,
         background:
-          "linear-gradient(160deg, #0d1b2a 0%, #1b2a3b 60%, #0f1e2e 100%)",
+          "radial-gradient(circle at top right, #1e293b 0%, #090d16 65%)",
         display: "flex",
         flexDirection: "column",
-        padding: "28px 24px",
-        animation: "slideDown 0.3s ease",
+        padding: "24px",
+        animation: "menuFade 0.25s ease",
       }}
     >
       {/* Top bar */}
@@ -335,18 +309,16 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          borderBottom: "1px solid rgba(201,149,108,0.2)",
-          paddingBottom: "20px",
-          marginBottom: "8px",
+          borderBottom: "1px solid rgba(251, 191, 36, 0.18)",
+          paddingBottom: "18px",
         }}
       >
         <span
           style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: "1.3rem",
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "1.25rem",
             fontWeight: 700,
-            color: "#c9956c",
-            letterSpacing: "0.05em",
+            color: "#fde68a",
           }}
         >
           {company_name}
@@ -357,16 +329,16 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
           style={{
             width: "40px",
             height: "40px",
-            borderRadius: "50%",
-            border: "1px solid rgba(201,149,108,0.3)",
-            background: "rgba(201,149,108,0.08)",
+            borderRadius: "12px",
+            border: "1px solid rgba(251, 191, 36, 0.3)",
+            background: "rgba(251, 191, 36, 0.08)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
           }}
         >
-          <X size={18} color="#c9956c" />
+          <X size={18} color="#fbbf24" />
         </button>
       </div>
 
@@ -375,86 +347,101 @@ const MobileMenu = ({ setOpen }: { setOpen: (open: boolean) => void }) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "4px",
-          marginTop: "16px",
+          gap: "8px",
+          marginTop: "20px",
           padding: 0,
           listStyle: "none",
         }}
       >
-        {["Home", "About", "Services", "Testimonials", "Contact"].map(
-          (item, i) => (
-            <li key={item} style={{ animationDelay: `${i * 0.06}s` }}>
+        {NAV_ITEMS.map((item) => {
+          const isActive = location.pathname === item.path;
+          return (
+            <li key={item.label}>
               <Link
-                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                to={item.path}
                 onClick={() => setOpen(false)}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  padding: "16px 20px",
-                  borderRadius: "8px",
-                  border: "1px solid rgba(201,149,108,0.08)",
-                  background: "rgba(255,255,255,0.03)",
-                  color: "rgba(255,255,255,0.88)",
-                  fontFamily: "'Raleway', sans-serif",
-                  fontSize: "1rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.05em",
+                  padding: "15px 18px",
+                  borderRadius: "14px",
+                  border: isActive
+                    ? "1px solid rgba(251, 191, 36, 0.4)"
+                    : "1px solid rgba(255, 255, 255, 0.07)",
+                  background: isActive
+                    ? "rgba(245, 158, 11, 0.12)"
+                    : "rgba(255, 255, 255, 0.03)",
+                  color: isActive ? "#fde68a" : "#f1f5f9",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: "0.98rem",
+                  fontWeight: 600,
                   textDecoration: "none",
-                  transition: "all 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.background = "rgba(201,149,108,0.1)";
-                  el.style.color = "#c9956c";
-                  el.style.borderColor = "rgba(201,149,108,0.3)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.background = "rgba(255,255,255,0.03)";
-                  el.style.color = "rgba(255,255,255,0.88)";
-                  el.style.borderColor = "rgba(201,149,108,0.08)";
                 }}
               >
-                {item}
-                <span
-                  style={{ color: "#c9956c", fontSize: "1.1rem", opacity: 0.6 }}
-                >
-                  ›
-                </span>
+                <span>{item.label}</span>
+                <ArrowUpRight size={17} color="#fbbf24" />
               </Link>
             </li>
-          ),
-        )}
+          );
+        })}
       </ul>
 
-      {/* Bottom address */}
+      {/* Bottom Direct Call Card */}
       <div
         style={{
           marginTop: "auto",
-          padding: "20px",
-          borderRadius: "8px",
-          border: "1px solid rgba(201,149,108,0.15)",
-          background: "rgba(201,149,108,0.04)",
+          padding: "18px",
+          borderRadius: "16px",
+          border: "1px solid rgba(251, 191, 36, 0.22)",
+          background: "rgba(245, 158, 11, 0.06)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
-        <p
+        <div>
+          <p
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: "0.72rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: "rgba(241, 245, 249, 0.6)",
+              margin: "0 0 4px 0",
+            }}
+          >
+            Direct Consultation Line
+          </p>
+          <a
+            href={`tel:+91${phone_number}`}
+            style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: "1rem",
+              fontWeight: 700,
+              color: "#fde68a",
+              textDecoration: "none",
+            }}
+          >
+            +91 {phone_number}
+          </a>
+        </div>
+        <a
+          href={`tel:+91${phone_number}`}
+          aria-label="Call now"
           style={{
-            fontFamily: "'Lato', sans-serif",
-            fontSize: "0.78rem",
-            color: "rgba(220,220,220,0.6)",
-            lineHeight: 1.7,
-            margin: 0,
+            width: "42px",
+            height: "42px",
+            borderRadius: "12px",
+            background: "linear-gradient(135deg, #fde68a 0%, #f59e0b 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#090d16",
           }}
         >
-          {address.line1}, {address.line2}
-          <br />
-          {address.District}, {address.state} – {address.pincode}
-          <br />
-          <span style={{ color: "#c9956c", fontWeight: 600 }}>
-            📞 +91 {phone_number}
-          </span>
-        </p>
+          <PhoneCall size={18} />
+        </a>
       </div>
     </div>
   );
